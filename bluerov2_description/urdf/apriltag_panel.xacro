@@ -14,9 +14,13 @@
         <geometry>
           <box size="0.15 0.15 0.001"/>
         </geometry>
-        <material name="white">
+
+        <material name="apriltag">
+          <!-- Replace the following with the correct path to your PNG file -->
+          <texture filename="package://bluerov2_description/materials/textures/tag36_11_00038.png"/>
           <color rgba="1 1 1 1"/>
         </material>
+        
       </visual>
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
