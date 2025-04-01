@@ -92,6 +92,14 @@
 <xacro:apriltag_panel ns="${ns}" panel_name="front">
   <origin xyz="${x_size/2 + 0.045} 0 0" rpy="${PI/2} 0 ${-PI/2}"/>
 </xacro:apriltag_panel>
+
+<xacro:apriltag_panel ns="${ns}" panel_name="top">
+  <origin xyz="0 0 ${z_size/2 + 0.045}" rpy="0 0 0"/>
+</xacro:apriltag_panel>
+
+<xacro:apriltag_panel ns="${ns}" panel_name="bottom">
+  <origin xyz="0 0 ${-z_size/2 - 0.045}" rpy="${PI} 0 0"/>
+</xacro:apriltag_panel>
   
 <!-- other Gazebo plugins -->
 <xacro:if value="$(arg simulation)">
