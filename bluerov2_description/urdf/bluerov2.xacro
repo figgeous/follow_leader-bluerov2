@@ -78,27 +78,27 @@
 
 <!-- Add the AprilTag panels -->
 <xacro:apriltag_panel ns="${ns}" panel_name="left">
-  <origin xyz="0 ${y_size/2 + 0.045} 0" rpy="${PI/2} 0 0"/>
+  <origin xyz="0 ${y_size/2 + 0.045} 0" rpy="${PI/2} ${PI/2} 0"/>
 </xacro:apriltag_panel>
 
 <xacro:apriltag_panel ns="${ns}" panel_name="right">
-  <origin xyz="0 ${-y_size/2 - 0.045} 0" rpy="${PI/2} 0 0"/>
+  <origin xyz="0 ${-y_size/2 - 0.045} 0" rpy="${PI/2} ${PI/2} ${PI}"/>
 </xacro:apriltag_panel>
 
 <xacro:apriltag_panel ns="${ns}" panel_name="back">
-  <origin xyz="${-x_size/2 - 0.045} 0 0" rpy="${PI/2} 0 ${PI/2}"/>
+  <origin xyz="${-x_size/2 - 0.045} 0 0" rpy="${PI/2} ${PI/2} ${PI/2}"/>
 </xacro:apriltag_panel>
 
 <xacro:apriltag_panel ns="${ns}" panel_name="front">
-  <origin xyz="${x_size/2 + 0.045} 0 0" rpy="${PI/2} 0 ${-PI/2}"/>
+  <origin xyz="${x_size/2 + 0.045} 0 0" rpy="${PI/2} ${PI/2} ${-PI/2}"/>
 </xacro:apriltag_panel>
 
 <xacro:apriltag_panel ns="${ns}" panel_name="top">
-  <origin xyz="0 0 ${z_size/2 + 0.045}" rpy="0 0 0"/>
+  <origin xyz="0 0 ${z_size/2 + 0.045}" rpy="0 0 ${PI}"/>
 </xacro:apriltag_panel>
 
 <xacro:apriltag_panel ns="${ns}" panel_name="bottom">
-  <origin xyz="0 0 ${-z_size/2 - 0.045}" rpy="${PI} 0 0"/>
+  <origin xyz="0 0 ${-z_size/2 - 0.045 - 0.10}" rpy="${PI} 0 0"/>
 </xacro:apriltag_panel>
   
 <!-- other Gazebo plugins -->

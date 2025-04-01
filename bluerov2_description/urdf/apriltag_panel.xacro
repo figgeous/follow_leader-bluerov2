@@ -13,15 +13,13 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://bluerov2_description/meshes/apriltag_panel.dae"/>
+          <box size="0.15 0.15 0.001"/>
         </geometry>
 
         <material name="apriltag">
-          <!-- Replace the following with the correct path to your PNG file -->
           <texture filename="package://bluerov2_description/materials/textures/tag36_11_00037.png"/>
           <color rgba="1 1 1 1"/>
         </material>
-        
       </visual>
 
       <collision>
