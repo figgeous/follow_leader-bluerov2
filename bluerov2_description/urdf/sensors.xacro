@@ -212,8 +212,8 @@
     <optical_frame_id>${ns}/camera_optical</optical_frame_id>
     <horizontal_fov>1.047</horizontal_fov>
     <image>
-        <width>640</width>
-        <height>400</height>
+        <width>1280</width>
+        <height>720</height>
     </image>
     <clip>
         <near>0.1</near>
@@ -221,7 +221,7 @@
     </clip>
     </camera>
     <always_on>1</always_on>
-    <update_rate>30</update_rate>
+    <update_rate>10</update_rate>
     <visualize>true</visualize>
     <topic>${ns}/image</topic>
     <enable_metrics>false</enable_metrics>

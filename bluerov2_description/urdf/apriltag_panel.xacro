@@ -2,8 +2,8 @@
 <xacro xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:property name="PI" value="3.1415927"/>
 
-  <xacro:macro name="apriltag_panel" params="ns y_offset">
-    <link name="${ns}/apriltag_panel">
+  <xacro:macro name="apriltag_panel" params="ns panel_name:=side *origin">
+    <link name="${ns}/apriltag_panel_${panel_name}">
       <inertial>
         <mass value="0.01"/>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -32,14 +32,14 @@
       </collision>
     </link>
 
-    <joint name="${ns}/apriltag_panel_joint" type="fixed">
+    <joint name="${ns}/apriltag_panel_${panel_name}_joint" type="fixed">
       <parent link="${ns}/base_link"/>
-      <child link="${ns}/apriltag_panel"/>
-      <origin xyz="0 ${y_offset} 0" rpy="${PI/2} 0 0"/>
+      <child link="${ns}/apriltag_panel_${panel_name}"/>
+      <xacro:insert_block name="origin"/>
     </joint>
 
     <!-- Add Gazebo-specific material configuration -->
-    <gazebo reference="${ns}/apriltag_panel">
+    <gazebo reference="${ns}/apriltag_panel_${panel_name}">
       <visual>
         <material>
           <ambient>1 1 1 1</ambient>
