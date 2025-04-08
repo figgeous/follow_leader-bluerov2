@@ -66,14 +66,14 @@
   <library_effects>
     <effect id="Material_003-effect">
       <profile_COMMON>
-        <newparam sid="tag36_11_00037_png_001-surface">
+        <newparam sid="tag41_12_00000-surface">
           <surface type="2D">
-            <init_from>tag36_11_00037_png_001</init_from>
+            <init_from>tag41_12_00000</init_from>
           </surface>
         </newparam>
-        <newparam sid="tag36_11_00037_png_001-sampler">
+        <newparam sid="tag41_12_00000-sampler">
           <sampler2D>
-            <source>tag36_11_00037_png_001-surface</source>
+            <source>tag41_12_00000-surface</source>
           </sampler2D>
         </newparam>
         <technique sid="common">
@@ -82,7 +82,7 @@
               <color sid="emission">0 0 0 1</color>
             </emission>
             <diffuse>
-              <texture texture="tag36_11_00037_png_001-sampler" texcoord="UVMap"/>
+              <texture texture="tag41_12_00000-sampler" texcoord="UVMap"/>
             </diffuse>
             <index_of_refraction>
               <float sid="ior">1.5</float>
@@ -93,8 +93,8 @@
     </effect>
   </library_effects>
   <library_images>
-    <image id="tag36_11_00037_png_001" name="tag36_11_00037_png_001">
-      <init_from>tag36_11_00037.png.001.png</init_from>
+    <image id="tag41_12_00000" name="tag41_12_00000">
+      <init_from>tag41_12_00000.png</init_from>
     </image>
   </library_images>
   <library_materials>
