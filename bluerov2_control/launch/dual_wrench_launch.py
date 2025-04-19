@@ -9,7 +9,7 @@ def generate_launch_description():
     with sl.group(ns='bluerov2_1'):
         # Launch slider_publisher for first robot
         sl.node('slider_publisher', 'slider_publisher', name='wrench_control',
-                arguments=[sl.find('auv_control', 'wrench_bluerov2_1.yaml')])
+                arguments=[sl.find('bluerov2_control', 'wrench_bluerov2_1.yaml', 'config')])
         
         # Launch thruster manager for first robot
         sl.node('thruster_manager', 'thruster_manager_node', 
@@ -30,7 +30,7 @@ def generate_launch_description():
     with sl.group(ns='bluerov2_2'):
         # Launch slider_publisher for second robot
         sl.node('slider_publisher', 'slider_publisher', name='wrench_control',
-                arguments=[sl.find('auv_control', 'wrench_bluerov2_2.yaml')])
+                arguments=[sl.find('bluerov2_control', 'wrench_bluerov2_2.yaml', 'config')])
         
         # Launch thruster manager for second robot
         sl.node('thruster_manager', 'thruster_manager_node',

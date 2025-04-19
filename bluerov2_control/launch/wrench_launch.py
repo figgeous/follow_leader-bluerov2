@@ -12,7 +12,7 @@ def generate_launch_description():
     with sl.group(ns=sl.arg('namespace')):
 
         sl.node('slider_publisher', 'slider_publisher', name='wrench_control',
-                arguments=[sl.find('auv_control', 'wrench.yaml')])
+                arguments=[sl.find('bluerov2_control', 'wrench.yaml', 'config')])
 
         # load body controller anyway
         sl.node('thruster_manager', 'thruster_manager_node', parameters=[sl.find('bluerov2_control', 'thruster_manager.yaml')])

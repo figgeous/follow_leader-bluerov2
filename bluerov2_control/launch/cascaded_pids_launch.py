@@ -10,18 +10,18 @@ def generate_launch_description():
     sl.declare_arg('rviz', default_value=True)
     
     with sl.group(ns=sl.arg('namespace')):
-        
-        # load body controller anyway
+
+        # launch pose controller
         sl.node('auv_control', 'cascaded_pid', parameters=[sl.find('bluerov2_control', 'cascaded_pid.yaml')],
-                output='screen')
+                arguments=['--ros-args', '--log-level', 'warn'])
 
         with sl.group(if_arg='sliders'):
-            sl.node('slider_publisher', 'slider_publisher', name='pose_control',
-                    arguments=[sl.find('auv_control', 'pose_setpoint.yaml')])
+            sl.node('slider_publisher', 'slider_publisher', name='pose_setpoint',
+                arguments=[sl.find('bluerov2_control', 'pose_setpoint.yaml', 'config')])
 
-            sl.node('slider_publisher', 'slider_publisher', name='tilt_control',
-                    arguments=[sl.find('bluerov2_control', 'tilt.yaml')])
-
+        # load body controller anyway
+        sl.node('thruster_manager', 'thruster_manager_node', parameters=[sl.find('bluerov2_control', 'thruster_manager.yaml')])
+                
     with sl.group(if_arg='rviz'):
         sl.include('bluerov2_control','rviz_launch.py',
                    launch_arguments={'namespace': sl.arg('namespace'), 'use_sim_time': sl.sim_time})
